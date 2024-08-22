@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Parallel Class Testing" parallel="classes" thread-count="2">
+	<listeners>
+		<listener class-name="generateTestReport.Listeners" />
+	</listeners>
+
+	<test name="parallelTest">
+		<parameter name="browser" value="chrome"></parameter>
+		<parameter name="User name" value="admin"></parameter>
+		<parameter name="Password" value="admin"></parameter>
+		<parameter name="InvalidUser" value="abcd123"></parameter>
+		<parameter name="Validpass" value="admin"></parameter>
+		<classes>
+			<class name="testScript.LoginPage_Test">
+			<methods><include name="verify_User_is_Able_To_Login_Using_Valid_Credentials"></include>
+			<include name="verify_User_is_Able_toLoginUsing_Invalid_UserName_and_Validpassword"></include></methods>	
+				
+			</class>
+		</classes>
+	</test>
+</suite>
