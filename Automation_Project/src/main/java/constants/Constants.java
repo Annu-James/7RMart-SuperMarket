@@ -5,6 +5,7 @@ public class Constants
 
 	public static final String TESTDATAFILE = System.getProperty("user.dir") + "\\src\\main\\resources\\TestData.xlsx";
 	public static final String ERRORMESSAGELOGIN = "Home Page is not Loaded, invalid Credentials";
+	public static final String ERRORMESSAGE_LOGIN="Alert is not displayed";
 	public static final String ERRORMESSAGEADMIN = "New Usew is not created";
 	public static final String ERRORMESSAGE_ADMINSEARCH = "Admin not Found";
 	public static final String ERRORMESSAGEMANAGEPAGES = "Product is not added to the list";

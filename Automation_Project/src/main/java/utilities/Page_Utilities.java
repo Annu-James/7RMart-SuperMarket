@@ -15,7 +15,7 @@ public class Page_Utilities {
 	Select selectField=new Select(element);
 	selectField.selectByVisibleText(elementText);;;
 	}
-	public void selectIndex(WebElement element,int elementNum)
+	public void selectIndexofElements(WebElement element,int elementNum)
 	{
 		Select select=new Select(element);
 		select.selectByIndex(elementNum);
@@ -26,12 +26,12 @@ public class Page_Utilities {
 		select.selectByValue(elementName);
 	}
 	
-	public void drag_Drop(WebElement element1,WebElement element2)
+	public void drag_DropElement(WebElement element1,WebElement element2)
 	{
 		Actions action=new Actions(driver);
 		action.dragAndDrop(element1, element2).perform();
 	}
-	public void javaScriptExecutor(WebElement element)
+	public void elementLocatorjavaScriptExecutor(WebElement element)
 	{
 		JavascriptExecutor js=(JavascriptExecutor) driver;
 		js.executeScript("window.scrollBy(0,document.body.scrollHeight", "");
