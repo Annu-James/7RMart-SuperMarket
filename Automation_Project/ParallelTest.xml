@@ -14,7 +14,7 @@
 		<classes>
 			<class name="testScript.LoginPage_Test">
 			<methods><include name="verify_User_is_Able_To_Login_Using_Valid_Credentials"></include>
-			<include name="verify_User_is_Able_toLoginUsing_Invalid_UserName_and_Validpassword"></include></methods>	
+		</methods>	
 				
 			</class>
 		</classes>
