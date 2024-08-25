@@ -8,11 +8,19 @@
 <body>
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
-<tr><th colspan="8">Suite</th></tr>
-<tr><td><a href="#t0">TestngFile</a></td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">8,130</td><td></td><td></td></tr>
+<tr><th colspan="8">Grouping</th></tr>
+<tr><td><a href="#t0">Grouping.xml</a></td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">3,252</td><td>Smoke testing</td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">TestngFile &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">testScript.LoginPage_Test</td><td><a href="#m0">verify_User_is_Able_To_Login_Using_Valid_Credentials</a></td><td rowspan="1">1724578076520</td><td rowspan="1">1460</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Grouping</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Grouping.xml &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">testScript.LoginPage_Test</td><td><a href="#m0">verify_User_is_Able_toLoginUsing_Invalid_UserName_and_Validpassword</a></td><td rowspan="1">1724581589317</td><td rowspan="1">68</td></tr></tbody>
 </table>
-<h2>TestngFile</h2><h3 id="m0">testScript.LoginPage_Test#verify_User_is_Able_To_Login_Using_Valid_Credentials</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>admin</td><td>admin</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>Grouping.xml</h2><h3 id="m0">testScript.LoginPage_Test#verify_User_is_Able_toLoginUsing_Invalid_UserName_and_Validpassword</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.io.FileNotFoundException: C:\Users\jeffk\git\7RMart-SuperMarket\Automation_Project\src\main\resources\TestData.xlsx (The system cannot find the path specified)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:216)
+	at java.base/java.io.FileInputStream.&lt;init&gt;(FileInputStream.java:157)
+	at java.base/java.io.FileInputStream.&lt;init&gt;(FileInputStream.java:111)
+	at utilities.Excel_Utilities.getStringData(Excel_Utilities.java:21)
+	at testScript.LoginPage_Test.verify_User_is_Able_toLoginUsing_Invalid_UserName_and_Validpassword(LoginPage_Test.java:46)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 27 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>
