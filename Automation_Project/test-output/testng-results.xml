@@ -2,15 +2,15 @@
 <testng-results ignored="3" total="4" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-08-25T15:56:26 IST" name="Grouping" finished-at="2024-08-25T15:56:29 IST" duration-ms="3252">
+  <suite started-at="2024-08-25T16:26:58 IST" name="Grouping" finished-at="2024-08-25T16:27:01 IST" duration-ms="2747">
     <groups>
       <group name="Smoke testing">
         <method signature="LoginPage_Test.verify_User_is_Able_toLoginUsing_Invalid_UserName_and_Validpassword()[pri:0, instance:testScript.LoginPage_Test@c05fddc]" name="verify_User_is_Able_toLoginUsing_Invalid_UserName_and_Validpassword" class="testScript.LoginPage_Test"/>
       </group> <!-- Smoke testing -->
     </groups>
-    <test started-at="2024-08-25T15:56:26 IST" name="Grouping.xml" finished-at="2024-08-25T15:56:29 IST" duration-ms="3252">
+    <test started-at="2024-08-25T16:26:58 IST" name="Grouping.xml" finished-at="2024-08-25T16:27:01 IST" duration-ms="2747">
       <class name="testScript.LoginPage_Test">
-        <test-method is-config="true" signature="initialiseBrowser(java.lang.String)[pri:0, instance:testScript.LoginPage_Test@c05fddc]" started-at="2024-08-25T15:56:26 IST" name="initialiseBrowser" finished-at="2024-08-25T15:56:29 IST" duration-ms="3080" status="PASS">
+        <test-method is-config="true" signature="initialiseBrowser(java.lang.String)[pri:0, instance:testScript.LoginPage_Test@c05fddc]" started-at="2024-08-25T16:26:58 IST" name="initialiseBrowser" finished-at="2024-08-25T16:27:01 IST" duration-ms="2618" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -21,7 +21,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initialiseBrowser -->
-        <test-method signature="verify_User_is_Able_toLoginUsing_Invalid_UserName_and_Validpassword()[pri:0, instance:testScript.LoginPage_Test@c05fddc]" started-at="2024-08-25T15:56:29 IST" name="verify_User_is_Able_toLoginUsing_Invalid_UserName_and_Validpassword" finished-at="2024-08-25T15:56:29 IST" duration-ms="68" status="FAIL">
+        <test-method signature="verify_User_is_Able_toLoginUsing_Invalid_UserName_and_Validpassword()[pri:0, instance:testScript.LoginPage_Test@c05fddc]" started-at="2024-08-25T16:27:01 IST" name="verify_User_is_Able_toLoginUsing_Invalid_UserName_and_Validpassword" finished-at="2024-08-25T16:27:01 IST" duration-ms="53" status="FAIL">
           <exception class="java.io.FileNotFoundException">
             <message>
               <![CDATA[C:\Users\jeffk\git\7RMart-SuperMarket\Automation_Project\src\main\resources\TestData.xlsx (The system cannot find the path specified)]]>
