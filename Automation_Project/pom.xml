@@ -79,7 +79,7 @@ https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
 				<configuration>
 					<testFailureIgnore>true</testFailureIgnore>
 					<suiteXmlFiles>
-						<suiteXmlFile>Parallel.xml</suiteXmlFile>
+						<suiteXmlFile>Grouping.xml</suiteXmlFile>
 					</suiteXmlFiles>
 				</configuration>
 			</plugin>

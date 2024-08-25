@@ -41,10 +41,11 @@ public class LoginPage_Test extends Base {
 	}
 
 	@Test(groups = { "Smoke testing" })
-	public void verify_User_is_Able_toLoginUsing_Invalid_UserName_and_Validpassword() throws IOException {
+	@Parameters({"InvalidUser","Validpass"})
+	public void verify_User_is_Able_toLoginUsing_Invalid_UserName_and_Validpassword(String username, String password) throws IOException {
 		Login_Page loginPage = new Login_Page(driver);
-		String username = Excel_Utilities.getStringData(2, 0, "Login page");
-		String password = Excel_Utilities.getStringData(2, 1, "Login page");
+		//String username = Excel_Utilities.getStringData(2, 0, "Login page");
+		//String password = Excel_Utilities.getStringData(2, 1, "Login page");
 		loginPage.enterUserNameField(username);
 		loginPage.enterPasswordField(password);
 		loginPage.clickSubmitButton();
