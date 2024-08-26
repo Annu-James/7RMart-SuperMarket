@@ -2,7 +2,7 @@ package retry;
 
 import org.testng.IRetryAnalyzer;
 import org.testng.ITestResult;
-
+//re execute the failed testcases
 public class Retry implements IRetryAnalyzer {
 	int counter = 0;
 	int retryLimit = 2;
