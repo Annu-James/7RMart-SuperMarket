@@ -16,37 +16,43 @@ public ManageCategory_SubCategory_New(WebDriver driver)
 this.driver=driver;
 PageFactory.initElements(driver, this);
 }
-@FindBy(xpath="//a[@href='https://groceryapp.uniqassosiates.com/admin/list-sub-category'][@class='small-box-footer']")WebElement clickSubManageCategory;
+@FindBy(xpath="//a[@href='https://groceryapp.uniqassosiates.com/admin/list-sub-category'][@class='small-box-footer']")WebElement clickSubManageCategory2;
 @FindBy(xpath="//a[@class='btn btn-rounded btn-danger']")WebElement clickNewCategory;
 @FindBy(xpath="//select[@id='cat_id']")WebElement selectCategory;
 @FindBy(xpath="//input[@id='subcategory']")WebElement enterSubCategory;
 @FindBy(xpath="//input[@id='main_img']")WebElement uploadImage;
 @FindBy(xpath="//button[@type='submit']")WebElement clickSave;
 FileUpload_Utilities data=new FileUpload_Utilities();
-public void subManageCategoryClick()
+public ManageCategory_SubCategory_New subManageCategoryClick2()
 {
-	clickSubManageCategory.click();
+	clickSubManageCategory2.click();
+	return this;
 }
-public void newCategoryClick()
+public ManageCategory_SubCategory_New newCategoryClick()
 {
 	clickNewCategory.click();
+	return this;
 }
-public void categorySelect(String inputValue)
+public ManageCategory_SubCategory_New categorySelect(String inputValue)
 {
 Page_Utilities page=new Page_Utilities();
 page.selectionMethods(selectCategory, inputValue);
+return this;
 }
-public void subCategoryData(String inputData)
+public ManageCategory_SubCategory_New subCategoryData(String inputData)
 {
 	data.usingSendKeys(enterSubCategory, inputData);
+	return this;
 }
-public void imageUpload(String image)
+public ManageCategory_SubCategory_New imageUpload(String image)
 {
 	data.usingSendKeys(uploadImage, image);
+	return this;
 }
-public void saveData()
+public ManageCategory_SubCategory_New saveData()
 {
 	clickSave.click();
+	return new ManageCategory_SubCategory_New(driver);
 }
 public boolean isDataAddedToSubCategory()
 {

@@ -4,6 +4,7 @@ import static org.testng.Assert.assertTrue;
 
 import java.io.IOException;
 
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import constants.Constants;
@@ -12,26 +13,27 @@ import pages.ManageCategory_SubCategory_New;
 import utilities.Excel_Utilities;
 
 public class ManageCategory_SubCategory_Test extends Base{
+	Login_Page loginPage;
+	ManageCategory_SubCategory_New subCategory;
   @Test
-  public void verify_UserCan_SelectCategory() throws IOException 
+  @Parameters({ "User name", "Password" })
+  public void verify_UserCan_SelectCategory(String userName, String password) throws IOException 
   {
-	  String userNameValue=Excel_Utilities.getStringData(1, 0, "Login page");
-      String passwordValue=Excel_Utilities.getStringData(1, 1, "Login page");
-	  Login_Page loginPage=new Login_Page(driver);
-	  loginPage.enterUserNameField(userNameValue);
-	  loginPage.enterPasswordField(passwordValue);
-	  loginPage.clickSubmitButton();
+	  loginPage=new Login_Page(driver);
+	  loginPage.enterUserNameField(userName).enterPasswordField(password).clickSubmitButton();
 	  
-	  ManageCategory_SubCategory_New subCategory=new ManageCategory_SubCategory_New(driver);
-	  subCategory.subManageCategoryClick();
-	  subCategory.newCategoryClick();
 	  String categoryValue=Excel_Utilities.getStringData(1, 0, "ManageCategory- Sub Category");
 	  String subCategoryValue=Excel_Utilities.getStringData(1, 1, "ManageCategory- Sub Category");
 	  String imagePth=Excel_Utilities.getStringData(1, 2, "ManageCategory- Sub Category");
+	  
+	  subCategory= loginPage.subManageCategoryClick2().newCategoryClick().categorySelect(categoryValue).subCategoryData(subCategoryValue).imageUpload(imagePth).saveData();
+	 /* subCategory.subManageCategoryClick2();
+	  subCategory.newCategoryClick();
+	  
 	  subCategory.categorySelect(categoryValue);
 	  subCategory.subCategoryData(subCategoryValue);
 	  subCategory.imageUpload(imagePth);
-	  subCategory.saveData();
+	  subCategory.saveData();*/
 	  boolean issubCategoryDisplayed=subCategory.isDataAddedToSubCategory();
 	  assertTrue(issubCategoryDisplayed,Constants.ERRORMESSAGE_SUBCATEGORY);
   }

@@ -21,27 +21,32 @@ public SubCategory_Search(WebDriver driver)
 @FindBy(xpath="//input[@class='form-control']")WebElement enterSubCategory;
 @FindBy(xpath="//button[@class='btn btn-danger btn-fix']")WebElement clickSearchButton;
 
-public void subManageCategoryClick()
+public SubCategory_Search subManageCategoryClick()
 {
 	clickSubManageCategory.click();
+	return this;
 }
-public void searchClick()
+public SubCategory_Search searchClick()
 {
 	clickSearch.click();
+	return this;
 }
-public void enterCategorydetail(String categoryValue)
+public SubCategory_Search enterCategorydetail(String categoryValue)
 {
 Page_Utilities category=new Page_Utilities();
 category.selectionMethods(enterCategory, categoryValue);
+return this;
 }
-public void subCategoryData(String subCategoryValue)
+public SubCategory_Search subCategoryData(String subCategoryValue)
 {
 FileUpload_Utilities data=new FileUpload_Utilities();
 data.usingSendKeys(enterSubCategory, subCategoryValue);
+return this;
 }
-public void clickSearchButton()
+public SubCategory_Search clickSearchButton()
 {
 	clickSearchButton.click();
+	return new SubCategory_Search(driver);
 }
 public boolean isSearchDataisDisplayed()
 {

@@ -10,10 +10,15 @@ import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import constants.Constants;
+import pages.Admin_User;
+import pages.Admin_User_Search;
 import pages.Login_Page;
 import utilities.Excel_Utilities;
 
 public class LoginPage_Test extends Base {
+	Login_Page loginPage;
+	Admin_User adminUser;
+
 	@DataProvider(name = "Credentials")
 	public Object[][] testData() {// data provider
 		Object[][] input = new Object[2][2];
@@ -24,16 +29,21 @@ public class LoginPage_Test extends Base {
 		return input;
 	}
 
-	@Test(retryAnalyzer = retry.Retry.class)
+	@Test//(retryAnalyzer = retry.Retry.class)
 	@Parameters({ "User name", "Password" })
 	public void verify_User_is_Able_To_Login_Using_Valid_Credentials(String userName, String password)
 			throws IOException {
-		Login_Page loginPage = new Login_Page(driver);
-		// String userName=Excel_Utilities.getStringData(1, 0, "Login page");
-		// String password=Excel_Utilities.getStringData(1, 1, "Login page");
-		loginPage.enterUserNameField(userName);
-		loginPage.enterPasswordField(password);
-		loginPage.clickSubmitButton();
+		
+		String userNameValue1 = Excel_Utilities.getStringData(1, 0, "Admin");
+		String passwordValue1 = Excel_Utilities.getStringData(1, 1, "Admin");
+		String userTypeValue = Excel_Utilities.getStringData(1, 2, "Admin");
+		loginPage = new Login_Page(driver);
+	    loginPage.enterUserNameField(userName)
+				    .enterPasswordField(password).clickSubmitButton();
+				   /* .adminUserClick().newUserClick()
+				    .enterUserName(userNameValue1).enterPassword(passwordValue1)
+				    .userType(userTypeValue).clickSubmitButton1();*/
+
 		boolean isHomePageLoaded = loginPage.isDashboardisLoaded();
 		assertTrue(isHomePageLoaded, Constants.ERRORMESSAGELOGIN);
 	}

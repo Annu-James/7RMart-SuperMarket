@@ -19,22 +19,26 @@ PageFactory.initElements(driver, this);
 @FindBy(xpath="//input[@class='form-control']")WebElement enterCategoryData;
 @FindBy(xpath="//button[@class='btn btn-danger btn-fix']")WebElement clickSearchButton;
 
-public void goToCategory()
+public Category_Search goToCategory()
 {
 	clickCategory.click();
+	return this;
 }
-public void clickSearchDetail()
+public Category_Search clickSearchDetail()
 {
 	clickSearch.click();
+	return this;
 }
-public void enterCategory(String searchInput)
+public Category_Search enterCategory(String searchInput)
 {
 FileUpload_Utilities input=new FileUpload_Utilities();
 input.usingSendKeys(enterCategoryData, searchInput);
+return this;
 }
-public void clickSearchButton()
+public Category_Search clickSearchButton()
 {
 	clickSearchButton.click();
+	return new Category_Search(driver);
 }
 public boolean isSearchisDisplayed()
 {

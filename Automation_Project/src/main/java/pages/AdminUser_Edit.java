@@ -16,39 +16,45 @@ public AdminUser_Edit(WebDriver driver)
 this.driver=driver;
 PageFactory.initElements(driver, this);
 }
-@FindBy(xpath="//a[@href='https://groceryapp.uniqassosiates.com/admin/list-admin'][@class='small-box-footer']")WebElement clickAdminUser;
+@FindBy(xpath="//a[@href='https://groceryapp.uniqassosiates.com/admin/list-admin'][@class='small-box-footer']")WebElement clickAdminUser1;
 @FindBy(xpath="//a[@class='btn btn-sm btn btn-primary btncss']")WebElement editAdminUser;
 @FindBy(xpath="//input[@name='username']")WebElement editUserName;
 @FindBy(xpath="//input[@id='password']")WebElement editPassword;
 @FindBy(xpath="//select[@name='user_type']")WebElement editUserType;
 @FindBy(xpath="//button[@name='Update']")WebElement clickUpdate;
 FileUpload_Utilities select=new FileUpload_Utilities();
-public void adminUserClick()
+public AdminUser_Edit adminUserClick1()
 {
-clickAdminUser.click();	
+clickAdminUser1.click();	
+return this;
 }
-public void adminUserEdit()
+public AdminUser_Edit adminUserEdit()
 {
 	editAdminUser.click();
+	return this;
 }
-public void editUserName(String userName)
+public AdminUser_Edit editUserName(String userName)
 {
 	editUserName.clear();
 	select.usingSendKeys(editUserName, userName);
+	return this;
 }
-public void editPasswordField(String password)
+public AdminUser_Edit editPasswordField(String password)
 {
 	editPassword.clear();
 	select.usingSendKeys(editPassword, password);
+	return this;
 }
-public void editUserType(String userTypefield)
+public AdminUser_Edit editUserType(String userTypefield)
 {
  Page_Utilities userType=new Page_Utilities();
  userType.selectionMethods(editUserType, userTypefield);
+ return this;
 }
-public void updatingAdminUserClick()
+public AdminUser_Edit updatingAdminUserClick()
 {
 	clickUpdate.click();
+	return new AdminUser_Edit(driver);
 }
 public boolean isAdminUserisUpdated()
 {

@@ -9,13 +9,13 @@
     <parameter name="browser" value="chrome"/>
     <parameter name="Password" value="admin"/>
     <classes>
-      <class name="testScript.LoginPage_Test">
+      <class name="testScript.ManageCategory_Test">
         <methods>
-          <include name="verify_User_is_Able_toLoginUsing_Valid_UserName_and_Invalidpassword" invocation-numbers="0"/>
+          <include name="verify_UserCan_ManageCategory" invocation-numbers="0"/>
           <include name="initialiseBrowser"/>
           <include name="afterMethod"/>
         </methods>
-      </class> <!-- testScript.LoginPage_Test -->
+      </class> <!-- testScript.ManageCategory_Test -->
     </classes>
   </test> <!-- TestngFile(failed) -->
 </suite> <!-- Failed suite [Suite] -->

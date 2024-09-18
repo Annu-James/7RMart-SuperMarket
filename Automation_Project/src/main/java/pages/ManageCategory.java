@@ -16,7 +16,7 @@ public ManageCategory(WebDriver driver)
 this.driver=driver;
 PageFactory.initElements(driver, this);
 }
-@FindBy(xpath="//a[@href='https://groceryapp.uniqassosiates.com/admin/list-category'][@class='small-box-footer']")WebElement clickCategory;
+@FindBy(xpath="//a[@href='https://groceryapp.uniqassosiates.com/admin/list-category'][@class='small-box-footer']")WebElement clickCategory1;
 @FindBy(xpath="//a[@onclick='click_button(1)']")WebElement clickNew;
 @FindBy(xpath="//input[@id='category']")WebElement enterCatergory;
 @FindBy(xpath="//li[@id='134-selectable']")WebElement dragInput;
@@ -26,39 +26,47 @@ PageFactory.initElements(driver, this);
 @FindBy(xpath="//input[@name='show_home'][@value='yes']")WebElement radioLeftMenu;
 @FindBy(xpath="//button[@type='submit']")WebElement clickSaveButton;
 FileUpload_Utilities input=new FileUpload_Utilities();
-public void goToCategory()
+public ManageCategory goToCategory1()
 {
-	clickCategory.click();
+	clickCategory1.click();
+	return this;
 }
-public void clickNewButton()
+public ManageCategory clickNewButton()
 {
 	clickNew.click();
+	return this;
 }
-public void inputCategory(String categoryValue)
+public ManageCategory inputCategory(String categoryValue)
 {
 	input.usingSendKeys(enterCatergory, categoryValue);
+	return this;
 }
-public void clickDiscount()
+public ManageCategory clickDiscount()
 {
 	dragInput.click();
+	return this;
 }
-public void imageUpload(String image)
+public ManageCategory imageUpload(String image)
 {
 	input.usingSendKeys(uploadImage, image);
+	return this;
 }
-public void clickRadioButton()
+public ManageCategory clickRadioButton()
 {
 	radioTopMenu.click();
+	return this;
 }
-public void clickRadioLeftMenu()
+public ManageCategory clickRadioLeftMenu()
 {
 	radioLeftMenu.click();
+	return this;
 }
-public void clickSave()
+public ManageCategory clickSave()
 {
 	Wait_Utilities wait=new Wait_Utilities();
 	wait.waitforAnElementtoBeClick(driver, clickSaveButton);
 	clickSaveButton.click();
+	return new ManageCategory(driver);
 }
 public boolean isCategoryisSaved()
 {

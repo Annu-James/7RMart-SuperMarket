@@ -22,30 +22,36 @@ public class Admin_User {
 @FindBy(xpath="//select[@name='user_type']")WebElement userTypeField;
 @FindBy(xpath="//button[@name='Create']")WebElement submitButton;
 @FindBy(xpath="//div[@class='alert alert-success alert-dismissible']")WebElement alertForNewUSer;
-public void adminUserClick()
+public Admin_User adminUserClick()
 {
-clickAdminUser.click();	
+clickAdminUser.click();
+return this;	
 }
-public void newUserClick()
+public Admin_User newUserClick()
 {
-	clickNewUser.click();	
+	clickNewUser.click();
+	return this;	
 }
-public void enterUserName(String userName)
+public Admin_User enterUserName(String userName)
 {
 	userNameField.sendKeys(userName);
+	return this;
 }
-public void enterPassword(String password)
+public Admin_User enterPassword(String password)
 {
 	passwordField.sendKeys(password);
+	return this;
 }
-public void userType(String userValue)
+public Admin_User userType(String userValue)
 {
 Page_Utilities page=new Page_Utilities();
 page.selectionMethods(userTypeField, userValue);
+return this;
 }
-public void clickSubmitButton1()
+public Admin_User clickSubmitButton1()
 {
-submitButton.click();	
+submitButton.click();
+return new Admin_User(driver);	
 }
 public boolean isNewUserIsAdded()
 {

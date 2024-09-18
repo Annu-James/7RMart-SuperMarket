@@ -4,12 +4,17 @@
 	<listeners>
 		<listener class-name="generateTestReport.Listeners" />
 	</listeners>
-	<test thread-count="5" name="TestngFile">
+	<test thread-count="5" name="Chaining">
 		<parameter name="browser" value="chrome"></parameter>
 		<parameter name="User name" value="admin"></parameter>
 		<parameter name="Password" value="admin"></parameter>
-	<classes>
-			<class name="testScript.ManageCategory_Test"></class>
+		<classes>
+			<class name="testScript.LoginPage_Test">
+				<methods>
+					<include
+						name="verify_User_is_Able_To_Login_Using_Valid_Credentials"></include>
+				</methods>
+			</class>
 
 		</classes>
 	</test> <!-- TestngFile -->

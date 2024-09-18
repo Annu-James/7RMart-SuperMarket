@@ -13,22 +13,23 @@ import pages.Login_Page;
 import utilities.Excel_Utilities;
 
 public class CategorySearch_Test extends Base{
+	Login_Page loginPage;
+	 Category_Search search;
   @Test
-  public void verifyUserCanSearchCategory() throws IOException
+  @Parameters({"User name","Password"})
+  public void verifyUserCanSearchCategory(String userName,String password) throws IOException
   {
-	  String userNameValue=Excel_Utilities.getStringData(1, 0, "Login page");
-      String passwordValue=Excel_Utilities.getStringData(1, 1, "Login page");
-	  Login_Page loginPage=new Login_Page(driver);
-	  loginPage.enterUserNameField(userNameValue);
-	  loginPage.enterPasswordField(passwordValue);
-	  loginPage.clickSubmitButton();
-	  
-	  Category_Search search=new Category_Search(driver);
-	  search.goToCategory();
-	  search.clickSearchDetail();
+	  //String userNameValue=Excel_Utilities.getStringData(1, 0, "Login page");
+      //String passwordValue=Excel_Utilities.getStringData(1, 1, "Login page");
+	  loginPage=new Login_Page(driver);
+	  loginPage.enterUserNameField(userName).enterPasswordField(password).clickSubmitButton();
 	  String searchData=Excel_Utilities.getStringData(1, 0, "Category-Search");
+	  search=loginPage.goToCategory().clickSearchDetail().enterCategory(searchData).clickSearchButton();
+	  
+	 /* search.goToCategory();
+	  search.clickSearchDetail();
 	  search.enterCategory(searchData);
-	  search.clickSearchButton();
+	  search.clickSearchButton();*/
 	  boolean isDetailDisplayed=search.isSearchisDisplayed();
 	  assertTrue(isDetailDisplayed,Constants.ERRORMESSAGE_CATEGORY_SEARCH);
   }
